@@ -20,22 +20,29 @@ async function main() {
   await _sodium.ready;
 
   // Backend
-  const encryptedResponseFromBackendToFrontend = await apiEncryptRequestPayload(
-    { test: "test1" }
-  );
+  const backendEncryptedResponse = await apiEncryptRequestPayload({
+    test: "test1",
+  });
+  console.log({ backendEncryptedResponse });
 
   // Frontend
-  const decryptedResponseFromBackendToFrontend =
-    await frontendDecryptRequestPayload(encryptedResponseFromBackendToFrontend);
+  const frontendDecryptedResponse = await frontendDecryptRequestPayload(
+    backendEncryptedResponse
+  );
+  console.log({ frontendDecryptedResponse });
 
   // Frontend encrypt to backend
-  const encryptedResponseFromFrontendToBackend =
-    await frontendEncryptRequestPayload({ test: "test2" }, BACKEND_PUBLIC_KEY);
+  const frontendEncryptedResponse = await frontendEncryptRequestPayload(
+    { test: "test2" },
+    BACKEND_PUBLIC_KEY
+  );
+  console.log({ frontendEncryptedResponse });
 
   // Backend decrypt from frontend
-  const decryptedResponseFromFrontendToBackend =
-    await backendDecryptRequestPayload(encryptedResponseFromFrontendToBackend);
-  console.log({ decryptedResponseFromFrontendToBackend });
+  const backendDecryptedResponse = await backendDecryptRequestPayload(
+    frontendEncryptedResponse
+  );
+  console.log({ backendDecryptedResponse });
 }
 
 main();
