@@ -57,12 +57,11 @@ async function main() {
   // console.log({ backendDecryptedResponse });
 
   // Encrypt using symmetric strategy only
-  console.log(
-    symmetricEncrypt({
-      patientCPF: "13369327406",
-      physicianCRM: "99999AM",
-    })
-  );
+  // console.log(
+  //   symmetricEncrypt({
+  //     test: "test",
+  //   })
+  // );
 
   // Decrypt using Symmetric strategy only
   // console.log(
