@@ -4,9 +4,9 @@
 
 `npm install`
 
-2. Gere as chaves assimétricas:
+2. Gere as chaves constants do projeto (chaves assimétricas e simétricas):
 
-`npm run generate:keys`
+`npm run generate:constants`
 
 3. Execute o projeto
 

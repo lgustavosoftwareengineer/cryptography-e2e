@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate:keys": "node generateKeys.js",
+    "generate:constants": "node generateConstants.js",
     "start": "node main.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "crypto-js": "^4.1.1",
     "libsodium-wrappers": "^0.7.11"
   }
 }
